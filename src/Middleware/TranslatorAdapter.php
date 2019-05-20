@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Denbad\RelativeDateSymfonyBridge\Middleware;
 
-use V3\Common\Infrastructure\Component\RelativeDate\Middleware\Translator;
+use Denbad\RelativeDate\Middleware\Translator;
 use Symfony\Component\Translation\TranslatorInterface;
 
 final class TranslatorAdapter implements Translator
