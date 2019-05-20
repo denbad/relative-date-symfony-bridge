@@ -1,0 +1,34 @@
+{
+    "name": "denbad/relative-date-symfony-bridge",
+    "description": "Bridge for using denbad/relative-date in Symfony projects",
+    "type": "library",
+    "keywords": ["relative-date", "symfony", "bridge"],
+    "homepage": "https://github.com/denbad/relative-date-symfony-bridge",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Denis Badulin"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/denbad/relative-date-symfony-bridge/issues",
+        "source": "https://github.com/denbad/relative-date-symfony-bridge"
+    },
+    "require": {
+        "php": "^7.2",
+        "denbad/relative-date": "@dev",
+        "symfony/config": "~3.4 || ~4.0",
+        "symfony/dependency-injection": "~3.4 || ~4.0",
+        "symfony/yaml": "~3.4 || ~4.0",
+        "symfony/translation": "~3.4 || ~4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {"Denbad\\RelativeDateSymfonyBridge\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Denbad\\RelativeDateSymfonyBridge\\Test\\": "tests/"}
+    }
+}

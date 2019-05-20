@@ -1,0 +1,46 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # RelativeDate
+
+    ## Format
+
+    Denbad\RelativeDate\Format\RelativeDateFormat:
+      tags:
+          - { name: 'date_formatter.format' }
+
+    Denbad\RelativeDate\Format\RelativeDateTimeFormat:
+      tags:
+          - { name: 'date_formatter.format' }
+
+    ## Middleware
+
+    Denbad\RelativeDate\Middleware\CachesMiddleware:
+      arguments: [!tagged 'date_formatter.format']
+      tags:
+          - { name: 'date_formatter.middleware', priority: 110 }
+
+    Denbad\RelativeDate\Middleware\ConvertsToRelativeMiddleware:
+      arguments: [!tagged 'date_formatter.format']
+      tags:
+          - { name: 'date_formatter.middleware', priority: 100 }
+
+    Denbad\RelativeDate\Middleware\TranslatesMiddleware:
+      tags:
+          - { name: 'date_formatter.middleware', priority: 90 }
+      bind:
+          Denbad\RelativeDate\Middleware\Translator: '@Denbad\RelativeDate\Middleware\NoopTranslator'
+
+    ## Formatter
+
+    Denbad\RelativeDate\Formatter\CompositeFormatter:
+        arguments: [!tagged 'date_formatter.middleware']
+
+    # RelativeDateSymfonyBridge
+
+    ## Middleware Translator
+
+    Denbad\RelativeDateSymfonyBridge\Middleware\TranslatorAdapter: ~
