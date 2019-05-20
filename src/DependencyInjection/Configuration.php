@@ -11,7 +11,8 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('relative_date');
+        $treeBuilder = new TreeBuilder();
+        $treeBuilder->root('denbad_relative_date');
 
         return $treeBuilder;
     }
