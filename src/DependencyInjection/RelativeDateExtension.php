@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension as BaseExtension;
 
-final class Extension extends BaseExtension
+final class RelativeDateExtension extends BaseExtension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
