@@ -19,11 +19,7 @@ final class Extension extends BaseExtension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
 
-        $translatesMiddleware = $container->getDefinition('Denbad\RelativeDate\Middleware\TranslatesMiddleware');
-
-        // dump($translatesMiddleware->getArgument(0)); die;
-
-        $translatesMiddleware
+        $container->getDefinition('Denbad\RelativeDate\Middleware\TranslatesMiddleware')
             ->replaceArgument(0, new Reference('Denbad\RelativeDateSymfonyBridge\Middleware\TranslatorAdapter'))
         ;
     }
