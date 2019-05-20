@@ -29,6 +29,6 @@
         "psr-4": {"Denbad\\RelativeDateSymfonyBridge\\": "src"}
     },
     "autoload-dev": {
-        "psr-4": {"Denbad\\RelativeDateSymfonyBridge\\Test\\": "tests"}
+        "psr-4": {"Denbad\\RelativeDateSymfonyBridge\\Tests\\": "tests"}
     }
 }
