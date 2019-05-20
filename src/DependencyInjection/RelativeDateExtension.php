@@ -7,9 +7,10 @@ namespace Denbad\RelativeDateSymfonyBridge\DependencyInjection;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension as BaseExtension;
+use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class RelativeDateExtension extends BaseExtension
+final class RelativeDateExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
