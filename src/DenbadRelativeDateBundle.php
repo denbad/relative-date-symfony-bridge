@@ -6,4 +6,4 @@ namespace Denbad\RelativeDateSymfonyBridge;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class RelativeDateBundle extends Bundle {}
+final class DenbadRelativeDateBundle extends Bundle {}

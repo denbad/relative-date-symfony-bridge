@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 use Denbad\RelativeDate\Formatter\CompositeFormatter;
 
-final class RelativeDateExtension extends Extension
+final class DenbadRelativeDateExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
