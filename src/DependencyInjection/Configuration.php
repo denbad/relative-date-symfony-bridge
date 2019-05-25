@@ -12,7 +12,19 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('denbad_relative_date');
+        $rootNode = $treeBuilder->root('denbad_relative_date');
+
+        $rootNode
+            ->addDefaultsIfNotSet()
+            ->children()
+                ->enumNode('default_strategy')
+                    ->values(['relative-date', 'relative'])
+                    ->defaultValue('relative-date')
+                ->end()
+                ->scalarNode('fallback_format')
+                    ->defaultValue('d F Y')
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
