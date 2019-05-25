@@ -31,8 +31,6 @@ services:
     Denbad\RelativeDate\Middleware\TranslatesMiddleware:
       tags:
           - { name: 'date_formatter.middleware', priority: 90 }
-      bind:
-          Denbad\RelativeDate\Middleware\Translator: '@Denbad\RelativeDate\Middleware\NoopTranslator'
 
     ## Formatter
 
