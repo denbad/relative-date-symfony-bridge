@@ -23,8 +23,8 @@ final class RelativeDateExtension extends Extension
 
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        $this->configureDefaultFormats($config);
-        $this->setTranslatorAdapter();
+        $this->configureDefaultFormats($container, $config);
+        $this->setTranslatorAdapter($container);
     }
 
     private function configureDefaultFormats(ContainerBuilder $container, array $config): void
