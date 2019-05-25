@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Denbad\RelativeDateSymfonyBridge\DependencyInjection;
 
+use Denbad\RelativeDate\Format\Format;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -18,11 +19,11 @@ final class Configuration implements ConfigurationInterface
             ->addDefaultsIfNotSet()
             ->children()
                 ->enumNode('default_strategy')
-                    ->values(['relative-date', 'relative-datetime'])
-                    ->defaultValue('relative-datetime')
+                    ->values([Format::FORMAT_RELATIVE_DATE, Format::FORMAT_RELATIVE_DATETIME])
+                    ->defaultValue(Format::FORMAT_RELATIVE_DATETIME)
                 ->end()
                 ->scalarNode('fallback_format')
-                    ->defaultValue('d F Y')
+                    ->defaultValue(Format::FALLBACK_FORMAT)
                 ->end()
             ->end();
 

@@ -38,8 +38,6 @@ final class DenbadRelativeDateExtension extends Extension
 
     private function setTranslatorAdapter(ContainerBuilder $container): void
     {
-        $container->getDefinition(TranslatesMiddleware::class)
-            ->setArgument(0, new Reference(TranslatorAdapter::class))
-        ;
+        $container->getDefinition(TranslatesMiddleware::class)->setArgument(0, new Reference(TranslatorAdapter::class));
     }
 }
