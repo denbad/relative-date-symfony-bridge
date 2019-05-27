@@ -16,7 +16,6 @@ final class TranslatorAdapterTest extends \PHPUnit\Framework\TestCase
 
         $id = 'today';
         $parameters = [];
-        $domain = 'domain';
         $locale = 'locale';
         $result = 'сегодня';
 
@@ -24,12 +23,12 @@ final class TranslatorAdapterTest extends \PHPUnit\Framework\TestCase
         $translator
             ->expects($this->once())
             ->method('trans')
-            ->with(TranslatorAdapter::TRANSLATION_KEY_PREFIX . $id, $parameters, $domain, $locale)
+            ->with($id, $parameters, TranslatorAdapter::TRANSLATION_DOMAIN, $locale)
             ->willReturn($result)
         ;
 
         $middleware = new TranslatorAdapter($translator);
-        $this->assertEquals($result, $middleware->trans($id, $parameters, $domain, $locale));
+        $this->assertEquals($result, $middleware->trans($id, $parameters, $locale));
     }
 
     private function getTranslator(): MockObject
