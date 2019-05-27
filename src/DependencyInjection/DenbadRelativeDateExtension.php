@@ -31,7 +31,7 @@ final class DenbadRelativeDateExtension extends Extension
     {
         $container->getDefinition(CompositeFormatter::class)->setArgument(1, $config['default_strategy']);
 
-        foreach (array_keys($container->findTaggedServiceIds('date_formatter.format')) as $serviceId) {
+        foreach (array_keys($container->findTaggedServiceIds('date_formatter.strategy')) as $serviceId) {
             $container->getDefinition($serviceId)->setArgument(0, $config['fallback_format']);
         }
     }

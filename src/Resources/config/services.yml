@@ -8,29 +8,32 @@ services:
 
     ## Format
 
-    Denbad\RelativeDate\Format\RelativeDateFormat:
+    Denbad\RelativeDate\Strategy\RelativeDateStrategy:
       tags:
-          - { name: 'date_formatter.format' }
+          - { name: 'date_formatter.strategy' }
 
-    Denbad\RelativeDate\Format\RelativeDateTimeFormat:
+    Denbad\RelativeDate\Strategy\RelativeDateTimeStrategy:
       tags:
-          - { name: 'date_formatter.format' }
+          - { name: 'date_formatter.strategy' }
 
     ## Middleware
 
     Denbad\RelativeDate\Middleware\CachesMiddleware:
-      arguments: [!tagged 'date_formatter.format']
       tags:
           - { name: 'date_formatter.middleware', priority: 110 }
 
     Denbad\RelativeDate\Middleware\ConvertsToRelativeMiddleware:
-      arguments: [!tagged 'date_formatter.format']
+      arguments: [!tagged 'date_formatter.strategy']
       tags:
           - { name: 'date_formatter.middleware', priority: 100 }
 
     Denbad\RelativeDate\Middleware\TranslatesMiddleware:
       tags:
           - { name: 'date_formatter.middleware', priority: 90 }
+
+    Denbad\RelativeDate\Middleware\CapitalizesMiddleware:
+      tags:
+        - { name: 'date_formatter.middleware', priority: 80 }
 
     ## Formatter
 
