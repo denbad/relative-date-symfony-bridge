@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Denbad\RelativeDateSymfonyBridge\DependencyInjection;
 
+use Denbad\RelativeDate\Formatter\CompositeFormatter;
 use Denbad\RelativeDate\Middleware\TranslatesMiddleware;
 use Denbad\RelativeDateSymfonyBridge\Middleware\TranslatorAdapter;
 use Symfony\Component\Config\FileLocator;
@@ -11,8 +12,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-
-use Denbad\RelativeDate\Formatter\CompositeFormatter;
 
 final class DenbadRelativeDateExtension extends Extension
 {
