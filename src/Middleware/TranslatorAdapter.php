@@ -9,6 +9,8 @@ use Symfony\Component\Translation\TranslatorInterface;
 
 final class TranslatorAdapter implements Translator
 {
+    public const TRANSLATION_KEY_PREFIX = 'denbad.relative_date.';
+
     private $translator;
 
     public function __construct(TranslatorInterface $translator)
@@ -18,6 +20,6 @@ final class TranslatorAdapter implements Translator
 
     public function trans(string $id, array $parameters = [], string $domain = null, string $locale = null): string
     {
-        return $this->translator->trans($id, $parameters, $domain, $locale);
+        return $this->translator->trans(self::TRANSLATION_KEY_PREFIX . $id, $parameters, $domain, $locale);
     }
 }

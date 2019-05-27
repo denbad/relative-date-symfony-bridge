@@ -24,7 +24,7 @@ final class TranslatorAdapterTest extends \PHPUnit\Framework\TestCase
         $translator
             ->expects($this->once())
             ->method('trans')
-            ->with($id, $parameters, $domain, $locale)
+            ->with(TranslatorAdapter::TRANSLATION_KEY_PREFIX . $id, $parameters, $domain, $locale)
             ->willReturn($result)
         ;
 
