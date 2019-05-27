@@ -9,7 +9,7 @@ use Symfony\Component\Translation\TranslatorInterface;
 
 final class TranslatorAdapter implements Translator
 {
-    public const TRANSLATION_DOMAIN = 'denbad.relative-date';
+    public const TRANSLATION_DOMAIN = 'denbadRelativeDate';
 
     private $translator;
 
