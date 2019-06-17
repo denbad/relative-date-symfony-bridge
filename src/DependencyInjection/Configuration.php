@@ -25,7 +25,8 @@ final class Configuration implements ConfigurationInterface
                 ->scalarNode('fallback_format')
                     ->defaultValue(Strategy::FALLBACK_FORMAT)
                 ->end()
-            ->end();
+            ->end()
+        ;
 
         return $treeBuilder;
     }

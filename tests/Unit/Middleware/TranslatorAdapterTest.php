@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Denbad\RelativeDateSymfonyBridge\Tests\Middleware;
+namespace Denbad\RelativeDateSymfonyBridge\Tests\Unit\Middleware;
 
 use Denbad\RelativeDateSymfonyBridge\Middleware\TranslatorAdapter;
 use PHPUnit\Framework\MockObject\MockObject;
