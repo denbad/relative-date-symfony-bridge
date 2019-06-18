@@ -24,25 +24,18 @@ final class ConfigurationTest extends \PHPUnit\Framework\TestCase
 
     public function testGetConfigTreeBuilder(): void
     {
-        $configs = array(
-            "scalar"     => "scalarValue",
-            "array_node" => array(
-                "val1" => "array_value_1",
-                "val2" => "array_value_2",
-            ),
-        );
 
-        $this->extension->load(array($configs), $container = $this->getContainer());
+        $this->extension->load([], $container = $this->getContainer());
+        
+        dump($this->extension->getProcessedConfigs());
 
-        $this->assertTrue($container->hasParameter($this->root . ".scalar"));
-        $this->assertEquals("scalarValue", $container->getParameter($this->root . ".scalar"));
+        //$this->assertTrue($container->hasParameter('denbad_relative_date' . ".default_strategy"));
 
-        $expected = array(
-            "val1" => "array_value_1",
-            "val2" => "array_value_2",
-        );
-        $this->assertTrue($container->hasParameter($this->root . ".array_node"));
-        $this->assertEquals($expected, $container->getParameter($this->root . ".array_node"));
+
+        //dump($this->extension->getAlias());
+        dump($this->extension->getConfiguration(['default_strategy' => 'aaa'],  $this->getContainer()  ));
+        die;
+
     }
 
     protected function getExtension(): ExtensionInterface
