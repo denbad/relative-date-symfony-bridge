@@ -40,6 +40,12 @@ services:
     Denbad\RelativeDate\Formatter\CompositeFormatter:
         arguments: [!tagged 'date_formatter.middleware']
 
+    # DELETE LATER START
+    denbad_relative_date_formatter:
+        public: true;
+        alias: 'Denbad\RelativeDate\Formatter\CompositeFormatter'
+    # DELETE LATER END
+
     # RelativeDateSymfonyBridge
 
     ## Middleware Translator
