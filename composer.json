@@ -15,7 +15,7 @@
         "source": "https://github.com/denbad/relative-date-symfony-bridge"
     },
     "require": {
-        "php": "^7.2",
+        "php": "^7.1",
         "denbad/relative-date": "@dev",
         "symfony/config": "~3.4",
         "symfony/dependency-injection": "~3.4",
